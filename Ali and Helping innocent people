@@ -1,0 +1,48 @@
+import java.util.*;
+class TestClass {
+public static void main(String args[] ) throws Exception {
+
+Scanner s = new Scanner(System.in);
+String ch = s.next();
+int i;
+boolean flag=false;
+for(i=0;i<9;i++)
+{
+if(!(ch.charAt(2)=='A'||ch.charAt(2)=='E'||ch.charAt(2)=='I'||ch.charAt(2)=='O'||ch.charAt(2)=='U'||ch.charAt(2)=='Y')&&ch.charAt(6)=='-')
+{
+if(i==2||i==6)
+{}
+else
+{
+if(ch.charAt(i)>'0'||ch.charAt(i)<='9')
+{
+flag=true;
+}
+else
+{
+flag=false;
+System.out.print("invalid");
+break;
+}
+}
+}
+else
+{
+System.out.print("invalid");
+break;
+}
+}
+if(flag)
+{
+int a=Integer.parseInt(String.valueOf(ch.charAt(0)))+Integer.parseInt(String.valueOf(ch.charAt(1)));
+int b=Integer.parseInt(String.valueOf(ch.charAt(3)))+Integer.parseInt(String.valueOf(ch.charAt(4)));
+int c=Integer.parseInt(String.valueOf(ch.charAt(4)))+Integer.parseInt(String.valueOf(ch.charAt(5)));
+int d=Integer.parseInt(String.valueOf(ch.charAt(7)))+Integer.parseInt(String.valueOf(ch.charAt(8)));
+if((a%2==0)&&(b%2==0)&&(c%2==0)&&(d%2==0))
+System.out.print("valid");
+else
+System.out.print("invalid");
+}
+}
+
+}
